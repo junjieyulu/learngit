@@ -10,15 +10,31 @@
     "commitizen": "^2.3.0",
     "conventional-changelog-cli": "^1.2.0",
     "cz-conventional-changelog": "^2.1.0",
+    "ghooks": "^2.0.2",
     "husky": "^0.13.1",
     "validate-commit-msg": "^2.11.1"
   },
   "config": {
-    "commitizen": {
+     "validate-commit-msg": {
+      "helpMessage": "\nPlease fix your commit message (and consider using http://npm.im/commitizen)\n",
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert",
+        "custom"
+      ],
+      "warnOnFail": false,
+      "autoFix": true
+    }
+  },
+  "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "commit-msg": "./validate-commit-msg.js"
     }
   }
 }
